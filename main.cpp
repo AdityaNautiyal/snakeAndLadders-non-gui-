@@ -25,12 +25,12 @@ int player1 = 0;
 
 int  player2= 0;
 
-//both player and computer's initial starting point is 0
+//both player's initial starting point is 0
 
 int squares[99]; // for the 100 squares, computers right counts from 0
 
 
-int main() //this is where it all goes down in c++, it's like the canvas for da vinci...
+int main() 
 {
     srand( time(NULL) ); //we need random numbers remeber?
 
@@ -45,9 +45,9 @@ int main() //this is where it all goes down in c++, it's like the canvas for da 
             squares[i] = i;
         }
 
-    do // every game is in some sort of loop
+    do 
     {
-        cout << "input any number and enter: ";
+        cout << "Player1 input any number and enter: ";
         cin >> input1;
 
         roll1 = roll_dice();//player rolls dice
@@ -62,9 +62,9 @@ int main() //this is where it all goes down in c++, it's like the canvas for da 
             player1 = player1 + roll1;//move player to a new position
         }
 
-        cout << "input any number and enter:";
+        cout << "Player 2 input any number and enter:";
         cin >> input2;
-        roll2 = roll_dice();//computer rolls dice
+        roll2 = roll_dice();//player2 rolls dice
 
         if( (roll2 + player2) > 100)
         {
@@ -73,7 +73,7 @@ int main() //this is where it all goes down in c++, it's like the canvas for da 
         else
         {
             squares[player2] = player2;//overwrite the current position
-            player2 = player2 + roll2;//move computer to a new position
+            player2 = player2 + roll2;//move player2 to a new position
         }
 
         switch(player1) // it is snakes and ladders, numbers represent the snakes and ladders
